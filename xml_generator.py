@@ -23,9 +23,12 @@ def generate_xml(filename):
     amount1.text = f"{random.choice(amounts)}"
 
     tree = xml.ElementTree(root)
+
     with open(filename, "wb") as files:
         tree.write(files)
 
 
 if __name__ == "__main__":
     generate_xml("test.xml")
+
+generate_xml("text.xml")
