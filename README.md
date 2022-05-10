@@ -5,7 +5,7 @@ values_generator.py is **not** to be run by users, it only generates the values 
 
 			
 
-			    <LOG>  
+			    	<LOG>  
     			<DATE>DDMMYYYY</DATE>  
     			<TIME>HHMMSS</TIME>  
     			<CC>\d{16}</CC>  
