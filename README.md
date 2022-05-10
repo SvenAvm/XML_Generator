@@ -1,5 +1,5 @@
 The script (**xml_generator.py**) will create a logs.xml file with randomly generated transaction logs.
-values_generator.py is **not** to be run by users, it only generates the values to be used in the xml log.
+values_generator.py generates the values to be used in the xml log.
 
 # Template:
 
