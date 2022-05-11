@@ -41,6 +41,15 @@ def create_xml():
             tree.write(xml_file, encoding='unicode', xml_declaration=True)
 
 
-create_xml()
+# Create a list of formatted credit cards using the full card numbers as input, list is called "formatted_cards"
 
+def hide_card_details():
+    formatted_cards = []
+    for cc in cc_list:
+        formatted_cards.append(f"**** **** **** {str(cc)[-4:]}")
+
+
+# create_xml()
+
+# hide_card_details()
 
