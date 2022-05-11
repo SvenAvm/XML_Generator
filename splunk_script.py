@@ -4,9 +4,9 @@ import xml.etree.ElementTree as Elem_tree
 from datetime import date
 
 
-times, cc_list, amounts, cc_iterations, time_iterations, amounts_iterations = [], [], [], 0, 0, 0
+times, cc_list, amounts, unique_cc, log_iterations_list = [], [], [], [], []
+time_iterations, amounts_iterations, unique_cc_iterations, cc_iterations = 0, 0, 0, 0
 current_date = date.today()
-log_iterations_list = []
 iterations_required = 10000
 log_iterations_counter = 0
 while len(log_iterations_list) < 10000:
@@ -15,8 +15,12 @@ while len(log_iterations_list) < 10000:
 
 
 # filling up the cc list
+while unique_cc_iterations < randrange(500, 1000, 1):
+    unique_cc.append(randrange(1000000000000000, 10000000000000000))
+    unique_cc_iterations += 1
+
 while cc_iterations < 10000:
-    cc_list.append(randrange(1000000000000000, 10000000000000000))
+    cc_list.append(random.choice(unique_cc))
     cc_iterations += 1
 
 # filling up the times list
@@ -70,4 +74,9 @@ def hide_card_details():
         formatted_cards.append(f"**** **** **** {str(cc)[-4:]}")
 
 
-create_xml()
+# hide_card_details()
+# create_xml()
+
+
+print(len(cc_list))
+print(len(unique_cc))
