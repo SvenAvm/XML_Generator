@@ -74,9 +74,7 @@ def hide_card_details():
         formatted_cards.append(f"**** **** **** {str(cc)[-4:]}")
 
 
-# hide_card_details()
-# create_xml()
+hide_card_details()
+create_xml()
 
 
-print(len(cc_list))
-print(len(unique_cc))
