@@ -49,7 +49,13 @@ def hide_card_details():
         formatted_cards.append(f"**** **** **** {str(cc)[-4:]}")
 
 
-# create_xml()
+create_xml()
 
-# hide_card_details()
+hide_card_details()
+
+with open("logs.xml") as file:
+    for line in file:
+        print(line)
+
+
 
