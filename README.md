@@ -1,10 +1,12 @@
 The script (**xml_generator.py**) will create a logs.xml file with randomly generated transaction logs.
+
 values_generator.py generates the values to be used in the xml log.
+
+splunk_script.py does the same job as XML_Generator.py, but does it without the need for values_generator, at the expense of code readability
 
 # Template:
 
-			
-
+		
 			    	<LOG>  
     			<DATE>DDMMYYYY</DATE>  
     			<TIME>HHMMSS</TIME>  
