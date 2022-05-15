@@ -1,9 +1,15 @@
+# Requirements
 import random
 from random import randrange
 import xml.etree.ElementTree as ET
 from datetime import date
 
+# Declaring lists and variables to be used later
 times, cc_list, amounts, cc_iterations, time_iterations, amounts_iterations = [], [], [], 0, 0, 0
+current_date = date.today()
+log_iterations_list = []
+iterations_required = 10000
+log_iterations_counter = 0
 
 # filling up the cc list
 while cc_iterations < 10000:
@@ -20,35 +26,13 @@ while amounts_iterations < 10000:
     amounts.append(round(random.uniform(1.01, 9999.99), 2))
     amounts_iterations += 1
 
-# filling up the times list
-# hours, minutes, seconds, hours_iterations, minutes_iterations, seconds_iterations = [], [], [], 10000, 10000, 100000
-
-# while hours_iterations < 10000:
-#    hours.append(randrange(0, 24))
-#    hours_iterations += 1
-
-# while minutes_iterations < 10000:
-#    minutes.append((randrange(0, 60)))
-#    minutes_iterations += 1
-
-# while seconds_iterations < 10000:
-#    seconds.append(randrange(0, 60))
-#    seconds_iterations += 1
-
-# while time_iterations < 10000:
-#    times.append(f"{random.choice(hours)}:{random.choice(minutes)}:{random.choice(seconds)}")
-#    time_iterations += 1
-
-
-current_date = date.today()
-log_iterations_list = []
-iterations_required = 10000
-log_iterations_counter = 0
+# some more iteration counters to be used later
 while len(log_iterations_list) < 10000:
     log_iterations_counter += 1
     log_iterations_list.append(log_iterations_counter)
 
 
+# Create the XML log file using the generated values
 def create_xml():
     function_iterations_counter = 0
     with open('logs.xml', 'a', encoding='utf-8') as xml_file:
@@ -79,20 +63,11 @@ def create_xml():
 
 
 # Create a list of formatted credit cards using the full card numbers as input, list is called "formatted_cards"
-
 def hide_card_details():
     formatted_cards = []
     for cc in cc_list:
         formatted_cards.append(f"**** **** **** {str(cc)[-4:]}")
 
 
+# hide_card_details()
 create_xml()
-
-hide_card_details()
-
-with open("logs.xml") as file:
-    for line in file:
-        print(line)
-
-# for time in times:
-#    print(time)
