@@ -4,7 +4,7 @@ from random import randrange
 import xml.etree.ElementTree as ET
 from datetime import date
 
-# Declaring lists and variables to be used later
+
 times, cc_list, amounts, cc_iterations, time_iterations, amounts_iterations = [], [], [], 0, 0, 0
 current_date = date.today()
 log_iterations_list = []
